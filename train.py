@@ -23,7 +23,7 @@ class DiffTrainer(Utils):
     def __init__(self):
         # train & test parameters
         self.train_batch_size=4
-        self.eval_batch_size=4
+        self.eval_batch_size=1
         self.workers=4
         self.report_img_idxs = [0, 10, 20, 30]
         self.report_img_per = 10
@@ -33,7 +33,6 @@ class DiffTrainer(Utils):
 
         settings['virtual_device'] = virtual_device 
         settings['master'] = virtual_device == 0
-        settings['writer'] = SummaryWriter(settings['log_path']) if settings['master'] else None
         settings['device'] = settings['user_set_devices'][virtual_device] if settings['mgpu'] and settings['user_set_devices'] != None else virtual_device
         
         net = settings['model'](*settings['args'], steps=settings['steps'])
@@ -91,6 +90,8 @@ class DiffTrainer(Utils):
         scale_up = self.valid_dataset.scale_factor
         report_img_size = int(img_size * scale_up)
         self.sample_x_T = torch.randn((len(self.report_img_idxs), 3, report_img_size, report_img_size), generator=generator).to(self.device)
+
+        self.writer = SummaryWriter(self.log_path) if self.master else None
         return
     
     # store current training state
@@ -163,6 +164,10 @@ class DiffTrainer(Utils):
             pbar.refresh()
         
         pbar.close()
+
+        if self.master:
+            self.writer.close()
+
         return
     
     # train one epoch
@@ -259,6 +264,8 @@ class DiffTrainer(Utils):
         # setup scores
         self.scores.setup(self.test_dataloader, self.device)
         self.scores.clear()
+
+        self.writer = SummaryWriter(self.log_path) if self.master else None
         return
     
     # store current test state
@@ -291,6 +298,8 @@ class DiffTrainer(Utils):
             self.writer.add_images('Test Images/B. Sample', sample, 0)
             self.writer.add_images('Test Images/C. GT', lbl, 0)
             print(f'> [Stats.] | IS: ({is_mean:.3f}, {is_std:.3f}) | FID: {fid:.3f} | PSNR: {psnr:.3f} | SSIM: {ssim:.3f}')
+
+            self.writer.close()
 
         return
 
