@@ -23,7 +23,7 @@ class DiffTrainer(Utils):
     def __init__(self):
         # train & test parameters
         self.train_batch_size=4
-        self.eval_batch_size=4
+        self.eval_batch_size=1
         self.workers=4
         self.report_img_idxs = [0, 10, 20, 30]
         self.report_img_per = 10

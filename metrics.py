@@ -88,6 +88,8 @@ class Metrics(nn.Module):
 
         self.set_states(psnr_sum, ssim_sum, is_acts, fid_acts)
 
+        print(self.fid_activations.shape[0])
+
         return
 
     def get_stored_samples_num(self):
@@ -105,8 +107,8 @@ class Metrics(nn.Module):
             img = self.upsample(img)
             img = self._norm(img)
             _ = self.model(img)
-            is_act = self.results['IS'].squeeze()
-            fid_act = self.results['FID'].squeeze()
+            is_act = self.results['IS'].reshape(1, -1)
+            fid_act = self.results['FID'].reshape(1, -1)
             self.is_activations = torch.cat((self.is_activations, is_act), dim=0) if self.is_activations != None else is_act
             self.fid_activations = torch.cat((self.fid_activations, fid_act), dim=0) if self.fid_activations != None else fid_act
         return
