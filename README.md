@@ -1,6 +1,6 @@
 # SR3
 <p> Reimplementation of 4x SR3 https://arxiv.org/abs/2104.07636 </p>
-<p> The UNet structure is same as vanilla DDPM except self-attention is performed at the last depth and right before the last depth. As mentioned in the paper, gamma value is sampled between two alpha values at t-1 and t with unifrom probability distribution, and the value is directly inserted to embedding generation module just like time value in DDPM </p>
+<p> The UNet structure is same as vanilla DDPM except that self-attention is performed at the last depth and the depth right before the last depth. As mentioned in the paper, gamma value is sampled between two alpha values at t-1 and t with unifrom probability distribution, and the value is directly inserted to embedding generation module just like time value in DDPM </p>
 
 ## Result
 
@@ -21,10 +21,6 @@
 |Sample Beta Schedule|Linear Schedule from 1e-4 to 0.1|
 |Train Steps|1000|
 |Sample Steps|100|
-
-
-
-
 
 #### B. Scores
 |Dataset|IS (Mean, Std.)|FID|PSNR|SSIM|
@@ -52,3 +48,19 @@
 |Dataset|IS (Mean, Std.)|FID|PSNR|SSIM|
 |:---:|:---:|:---:|:---:|:---:|
 |centor crop 32x32 to 128x128|(5.441, 0.547)|8.088|29.549|0.695|
+
+#### A. Settings
+|Tag|Setting|
+|:---:|:---:|
+|Train Batch Size|12|
+|Train Iterations|500K|
+|Trian Data|DIV2K Train Set + Flickr2K Train Set from 1001 to 2650 images|
+|Validation Data|DIV2K Validation Set|
+|Test Data|Flickr2K Train Set from 1 to 1000 images|
+|Train Data Augmentation|Random Crop, Random Flip, Random Rotation|
+|Test Data Augmentation|Centor Crop|
+|Train Learning Rate Schedule|Cosine Annealing Schedule from 1e-5 to 1e-7|
+|Train Beta Scehdule|Linear Schedule from 1e-4 to 0.005|
+|Sample Beta Schedule|Linear Schedule from 1e-6 to 0.05|
+|Train Steps|1000|
+|Sample Steps|100|
