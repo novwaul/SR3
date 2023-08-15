@@ -1,6 +1,6 @@
 # SR3
 <p> Reimplementation of 4x SR3 https://arxiv.org/abs/2104.07636 </p>
-<p> The UNet structure is almost same as vanilla DDPM except that self-attention is performed at the last depth and the depth right before the last depth, and group normalization is performed on total 8 groups instead of 32 groups. As mentioned in the paper, gamma value is sampled between two alpha values at t-1 and t with unifrom probability distribution, and the value is directly inserted to embedding generation module just like time value in DDPM </p>
+<p> The UNet structure is almost same as vanilla DDPM except that self-attention is performed at the last depth and the depth right before the last depth, and group normalization is performed on total 8 groups instead of 32 groups. As mentioned in the paper, gamma value is sampled between two alpha values at t-1 and t with unifrom probability distribution, and the value is directly inserted to embedding generation module just like time value in DDPM. </p>
 
 ## Result
 
