@@ -48,7 +48,7 @@
 ### 32x32 to 128x128 Model
 |Dataset|IS (Mean, Std.)|FID|PSNR|SSIM|
 |:---:|:---:|:---:|:---:|:---:|
-|centor crop 32x32 to 128x128|(5.441, 0.547)|8.088|29.549|0.695|
+|centor crop 32x32 to 128x128|(-, -)|-|-|-|
 
 #### A. Settings
 |Tag|Setting|
