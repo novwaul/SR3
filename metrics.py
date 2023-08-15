@@ -102,11 +102,12 @@ class Metrics(nn.Module):
     
     def _update_acts(self, img):
         with torch.no_grad():
+            B = img.shape[0]
             img = self.upsample(img)
             img = self._norm(img)
             _ = self.model(img)
-            is_act = self.results['IS'].reshape(1, -1)
-            fid_act = self.results['FID'].reshape(1, -1)
+            is_act = self.results['IS'].reshape(B, -1)
+            fid_act = self.results['FID'].reshape(B, -1)
             self.is_activations = torch.cat((self.is_activations, is_act), dim=0) if self.is_activations != None else is_act
             self.fid_activations = torch.cat((self.fid_activations, fid_act), dim=0) if self.fid_activations != None else fid_act
         return
