@@ -3,16 +3,35 @@
 
 
 ## Result
-For all evaluation, Flickr2K 1k samples (from img 1 to img 1000) are used.
 
 ### 64x64 to 256x256 Model
 
-#### A. Scores
+#### A. Settings
+|Tag|Setting|
+|:---:|:---:|
+|Train Batch Size|4|
+|Train Iterations|500K|
+|Trian Data|DIV2K Train Set + Flickr2K Train Set from 1001 to 2650 images|
+|Validation Data|DIV2K Validation Set|
+|Test Data|Flickr2K Train Set from 1 to 1000 images|
+|Train Data Augmentation|Random Crop, Random Flip, Random Rotation|
+|Test Data Augmentation|Centor Crop|
+|Train Learning Rate Schedule|Cosine Annealing Schedule from 1e-5 to 1e-7|
+|Train Beta Scehdule|Linear Schedule from 1e-4 to 0.005|
+|Sample Beta Schedule|Linear Schedule from 1e-4 to 0.1|
+|Train Steps|1000|
+|Sample Steps|100|
+
+
+
+
+
+#### B. Scores
 |Dataset|IS (Mean, Std.)|FID|PSNR|SSIM|
 |:---:|:---:|:---:|:---:|:---:|
 |centor crop 64x64 to 256x256|(12.829, 0.992)|3.642|23.185|0.564|
 
-#### B. Samples
+#### C. Samples
 
 ##### Validation
 |Tag|Image|
