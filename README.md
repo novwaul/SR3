@@ -33,17 +33,16 @@
 ##### Validation
 |Tag|Image|
 |:---:|:---:|
-|LR|![LR64_val](https://github.com/novwaul/SR3/assets/53179332/d67c1f49-e92c-40f1-8333-6358eb5781a6)|
-|Sample|![Sample64_val](https://github.com/novwaul/SR3/assets/53179332/717ed6f6-b5d1-4de2-838d-48aeaef68b34)|
-|HR|![HR64_val](https://github.com/novwaul/SR3/assets/53179332/68a2c1f5-8465-4422-b2d2-79dbfa7b73cb)|
+|LR|![LR64_val](https://github.com/novwaul/SR3/assets/53179332/f7e3974f-d503-43d1-9a13-3fe4ee2e8d0c)|
+|Sample|![Sample64_val](https://github.com/novwaul/SR3/assets/53179332/70dba161-3b20-472d-b4b5-0dcc0748d657)|
+|HR|![HR64_val](https://github.com/novwaul/SR3/assets/53179332/ca2736aa-e350-4a81-bdf6-6abb8313a55d)|
 
 ##### Test
 |Tag|Image|
 |:---:|:---:|
-|LR|![LR64](https://github.com/novwaul/SR3/assets/53179332/3b0b886e-830a-49df-83c1-88a6065254c8)|
-|Sample|![Sample64](https://github.com/novwaul/SR3/assets/53179332/86871fb6-e21e-4f90-b778-d6c723a9939a)|
-|HR|![HR64](https://github.com/novwaul/SR3/assets/53179332/90d8e3d5-abeb-436a-96a5-f0f764894cdb)|
-
+|LR|![LR64](https://github.com/novwaul/SR3/assets/53179332/656a7d4b-1925-42b8-b74b-698b13ec98ff)|
+|Sample|![Sample64](https://github.com/novwaul/SR3/assets/53179332/5a922a74-2770-4b5c-8ca6-aeb2a7ddd3f7)|
+|HR|![HR64](https://github.com/novwaul/SR3/assets/53179332/c8e53193-4c86-4caf-aa79-d9d314a5a9c3)|
 
 ### 32x32 to 128x128 Model
 |Dataset|IS (Mean, Std.)|FID|PSNR|SSIM|
