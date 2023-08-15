@@ -88,8 +88,6 @@ class Metrics(nn.Module):
 
         self.set_states(psnr_sum, ssim_sum, is_acts, fid_acts)
 
-        print(self.fid_activations.shape[0])
-
         return
 
     def get_stored_samples_num(self):
