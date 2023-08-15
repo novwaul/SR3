@@ -65,3 +65,20 @@
 |Sample Beta Schedule|Linear Schedule from 1e-6 to 0.05|
 |Train Steps|1000|
 |Sample Steps|100|
+
+#### C. Samples
+
+##### Validation
+|Tag|Image|
+|:---:|:---:|
+|LR|![LR-Val](https://github.com/novwaul/SR3/assets/53179332/935f9984-2da7-436b-90f4-87d4ac482267)|
+|Sample|![Sample-Val](https://github.com/novwaul/SR3/assets/53179332/c759b42b-a6bb-48bd-8c10-dc0da2d4c104)|
+|HR|![HR-Val](https://github.com/novwaul/SR3/assets/53179332/56744f03-edca-477b-88dc-2a0e1f4be808)|
+
+##### Test
+|Tag|Image|
+|:---:|:---:|
+|LR|![LR](https://github.com/novwaul/SR3/assets/53179332/3ed9dfea-d9b0-4c5e-a311-61937457a9c5)|
+|Sample|![Sample](https://github.com/novwaul/SR3/assets/53179332/6b9322b9-fb03-4d01-8422-81ef7d261c30)|
+|HR|![HR](https://github.com/novwaul/SR3/assets/53179332/47e1a173-dcf5-445b-9472-cab554105e7a)|
+
