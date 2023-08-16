@@ -72,14 +72,14 @@
 
 #### C. Samples
 
-##### Validation
+##### Validation (32x32 to 128x128)
 |Tag|Image|
 |:---:|:---:|
 |LR|![LR-Val](https://github.com/novwaul/SR3/assets/53179332/935f9984-2da7-436b-90f4-87d4ac482267)|
 |Sample|![Sample-Val](https://github.com/novwaul/SR3/assets/53179332/c759b42b-a6bb-48bd-8c10-dc0da2d4c104)|
 |HR|![HR-Val](https://github.com/novwaul/SR3/assets/53179332/56744f03-edca-477b-88dc-2a0e1f4be808)|
 
-##### Test
+##### Test (32x32 to 128x128)
 |Tag|Image|
 |:---:|:---:|
 |LR|![LR](https://github.com/novwaul/SR3/assets/53179332/3ed9dfea-d9b0-4c5e-a311-61937457a9c5)|
