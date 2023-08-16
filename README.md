@@ -41,7 +41,7 @@
 |Sample|![Sample64_val](https://github.com/novwaul/SR3/assets/53179332/70dba161-3b20-472d-b4b5-0dcc0748d657)|
 |HR|![HR64_val](https://github.com/novwaul/SR3/assets/53179332/ca2736aa-e350-4a81-bdf6-6abb8313a55d)|
 
-##### Test
+##### Test (64x64 to 256x256)
 |Tag|Image|
 |:---:|:---:|
 |LR|![LR64](https://github.com/novwaul/SR3/assets/53179332/656a7d4b-1925-42b8-b74b-698b13ec98ff)|
