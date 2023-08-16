@@ -29,6 +29,8 @@
 |centor crop 64x64 to 256x256|(12.829, 0.992)|3.642|23.185|0.564|
 |centor crop 256x256 to 1024x1024|(21.305, 2.290)|0.312|23.819|0.617|
 
+Note that this model does not train on 256x256 to 1024x1024.
+
 #### C. Samples
 
 ##### Validation
