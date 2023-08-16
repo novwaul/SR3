@@ -49,6 +49,14 @@
 |Sample|![Sample64](https://github.com/novwaul/SR3/assets/53179332/5a922a74-2770-4b5c-8ca6-aeb2a7ddd3f7)|
 |HR|![HR64](https://github.com/novwaul/SR3/assets/53179332/c8e53193-4c86-4caf-aa79-d9d314a5a9c3)|
 
+##### Test (256x256 to 1024x1024)
+|Tag|Image|
+|:---:|:---:|
+|LR|![LR256](https://github.com/novwaul/SR3/assets/53179332/41a1d329-9123-4e11-a03d-66d92a528241)|
+|Sample|![Sample256](https://github.com/novwaul/SR3/assets/53179332/6cdccc42-5ba4-4294-bf16-8ecd11cca827)|
+|HR|![HR256](https://github.com/novwaul/SR3/assets/53179332/6a13c426-79bd-4b5e-bc95-45ade689fff6)|
+
+
 ### 32x32 to 128x128 Model
 |Dataset|IS (Mean, Std.)|FID|PSNR|SSIM|
 |:---:|:---:|:---:|:---:|:---:|
