@@ -29,7 +29,8 @@
 |centor crop 64x64 to 256x256|(12.829, 0.992)|3.642|23.185|0.564|
 |centor crop 256x256 to 1024x1024|(21.305, 2.290)|0.312|23.819|0.617|
 
-Note that this model does not train on 256x256 to 1024x1024.
+<p> Note that this model does not train on 256x256 to 1024x1024. <\p>
+<p> Inception Score shows low values as cropped images are hard to recognize as an object. As crop size increases, Inception Score also increases, <\p>
 
 #### C. Samples
 
