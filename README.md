@@ -33,6 +33,7 @@
 <p>Inception Score shows low values as cropped images are hard to recognize as an object. As crop size increases, Inception Score also increases.</p>
 
 #### C. Samples
+<p>Note that the below LR images are upsampled images by using bicubic interpolation.</p>
 
 ##### Validation (64x64 to 256x256)
 |Tag|Image|
@@ -71,6 +72,7 @@
 |Sample Steps|100|
 
 #### C. Samples
+<p>Note that the below LR images are upsampled images by using bicubic interpolation.</p>
 
 ##### Validation (32x32 to 128x128)
 |Tag|Image|
