@@ -34,7 +34,7 @@
 
 #### C. Samples
 
-##### Validation
+##### Validation (64x64 to 256x256)
 |Tag|Image|
 |:---:|:---:|
 |LR|![LR64_val](https://github.com/novwaul/SR3/assets/53179332/f7e3974f-d503-43d1-9a13-3fe4ee2e8d0c)|
