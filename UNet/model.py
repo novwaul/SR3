@@ -120,7 +120,7 @@ class WideResNetBlock(nn.Module): # DDPM ResBlock
         self.dropout = nn.Dropout(drp_rate) 
         self.conv2 = Conv2d(out_channel, out_channel, kernel=3, gain=1e-10)
 
-        if not self.is_match: # to match 'channel' betweem 'x' and 'z'
+        if not self.is_match: # to match 'channel' between 'x' and 'z'
             self.linear2 = Linear(in_channel, out_channel)
         
         if self.do_attention:
