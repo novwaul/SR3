@@ -172,7 +172,7 @@ class SelfAttentionBlock(nn.Module):
 
         w = torch.matmul(q, k.transpose(-2,-1)) / (C**0.5) # shape=(B,H*W,H*W)
         attention = self.softmax(w)
-        self_attention = torch.matmul(attention, v) # shape=(B,H*W,C)
+        z = torch.matmul(attention, v) # shape=(B,H*W,C)
 
         z = self.proj(z).permute(0, 3, 1, 2).reshape(B, C, H, W)
         return x + z
