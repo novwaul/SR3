@@ -332,7 +332,7 @@ class DiffTrainer(Utils):
                 is_acts_gather = [torch.ones_like(is_acts) for _ in range(N)]
                 fid_acts_gather = [torch.ones_like(fid_acts) for _ in range(N)]
                 
-                dist.all_gather(is_acts_gather, id_acts)
+                dist.all_gather(is_acts_gather, is_acts)
                 dist.all_gather(fid_acts_gather, fid_acts)
                 dist.all_reduce(psnr_sum, op=dist.ReduceOp.SUM)
                 dist.all_reduce(ssim_sum, op=dist.ReduceOp.SUM)
