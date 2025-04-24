@@ -19,6 +19,8 @@ from metrics import Metrics
 from data import DF2KTrainDataset, DIV2KValDataset, Flickr2KTestDataset
 from diffusion import GaussianDiffusion
 
+import torch.distributed as dist
+
 class DiffTrainer(Utils):
     def __init__(self):
         # train & test parameters
