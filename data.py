@@ -70,19 +70,25 @@ class EvalDataset(Dataset):
         return img, lbl
 
 class DIV2kDataset(TrainDataset):
-    def __init__(self):
+    def __init__(self,
+                img_path,
+                lbl_path,
+                crop_size):
         super().__init__(
-            img_path='/home/kaist/inje/sr/data/DIV2K_train_LR_bicubic/X4',
-            lbl_path='/home/kaist/inje/sr/data/DIV2K_train_HR',
-            crop_size=64    
+            img_path,
+            lbl_path,
+            crop_size
         )
 
 class Flickr2KDataset(TrainDataset):
-    def __init__(self):
+    def __init__(self,
+                img_path,
+                lbl_path,
+                crop_size):
         super().__init__(
-            img_path='/home/kaist/inje/sr/data/Flickr2K/Flickr2K_LR_bicubic/X4_2',
-            lbl_path='/home/kaist/inje/sr/data/Flickr2K/Flickr2K_HR2',
-            crop_size=64
+            img_path,
+            lbl_path,
+            crop_size
         )
 
 class DF2KTrainDataset(Dataset):
@@ -104,17 +110,23 @@ class DF2KTrainDataset(Dataset):
             return self.flickr2k.__getitem__(idx-self.div2k_len)
 
 class DIV2KValDataset(EvalDataset):
-    def __init__(self):
+    def __init__(self,
+                img_path,
+                lbl_path,
+                crop_size):
         super().__init__(
-            img_path='/home/kaist/inje/sr/data/DIV2K_valid_LR_bicubic/X4',
-            lbl_path='/home/kaist/inje/sr/data/DIV2K_valid_HR',
-            crop_size=64
+            img_path,
+            lbl_path,
+            crop_size
         )
 
 class Flickr2KTestDataset(EvalDataset):
-    def __init__(self):
+    def __init__(self,
+                img_path,
+                lbl_path,
+                crop_size):
         super().__init__(
-            img_path='/home/kaist/inje/sr/data/Flickr2K/Flickr2K_LR_bicubic/X4_1',
-            lbl_path='/home/kaist/inje/sr/data/Flickr2K/Flickr2K_HR1',
-            crop_size=64
+            img_path,
+            lbl_path,
+            crop_size
         )
