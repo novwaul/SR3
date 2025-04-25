@@ -36,6 +36,15 @@ if __name__ == '__main__':
     settings['workers']=4 # number of dataloader workers
     settings['report_img_idx'] = [0, 10, 20, 30] # validation image index
     settings['report_img_per'] = 10 # validation image report period
+    settings['crop_size'] = 64
+    settings['div2k_train_lr_path']=''
+    settings['div2k_train_hr_path']=''
+    settings['div2k_test_lr_path']=''
+    settings['div2k_test_hr_path']=''
+    settings['flickr2k_train_lr_path']=''
+    settings['flickr2k_train_hr_path']=''
+    settings['flickr2k_test_lr_path']=''
+    settings['flickr2k_test_hr_path']=''
     ###########################################################################
     """
      [ Hyper-parameters & image paths ]
