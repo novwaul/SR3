@@ -66,6 +66,8 @@ class DiffTrainer(Utils):
 
         self.div2k_test_lr_path=settings['div2k_test_lr_path']
         self.div2k_test_hr_path=settings['div2k_test_hr_path']
+
+        self.crop_size=settings['crop_size']
         
         self._setup_exec_env(virtual_device, ngpus_per_node, settings)
         self._setup_train_env()
@@ -77,7 +79,7 @@ class DiffTrainer(Utils):
     # register objects needed to perform training
     def _setup_train_env(self):
         # define train dataloader
-        train_dataset = DF2KTrainDataset()
+        train_dataset = DF2KTrainDataset(self.div2k_train_lr_path, self.div2k_train_hr_path, self.flickr2k_train_lr_path, self.flickr2k_train_hr_path, self.crop_size)
         self.train_sampler = DistributedSampler(train_dataset, shuffle=True, drop_last=True) if self.mgpu else None
         self.train_dataloader = DataLoader(train_dataset, batch_size=self.train_batch_size, num_workers=self.workers, sampler=self.train_sampler, pin_memory=True)
 
@@ -88,7 +90,7 @@ class DiffTrainer(Utils):
         self.scheduler = CosineAnnealingLR(self.optimizer, T_max=self.epochs*self.iter_per_epoch, eta_min=1e-7)
 
         # define valid dataloader
-        self.valid_dataset = DIV2KValDataset()
+        self.valid_dataset = DIV2KValDataset(self.div2k_test_lr_path, self.div2k_test_hr_path, self.crop_size)
         valid_sampler = DistributedSampler(self.valid_dataset, shuffle=False, drop_last=False) if self.mgpu else None
         self.valid_dataloader = DataLoader(self.valid_dataset, batch_size=self.eval_batch_size, num_workers=self.workers, sampler=valid_sampler, pin_memory=True)
 
