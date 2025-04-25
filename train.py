@@ -58,6 +58,14 @@ class DiffTrainer(Utils):
         self.workers=settings['workers']
         self.report_img_idxs=settings['report_img_idx']
         self.report_img_per=settings['report_img_per']
+
+        self.div2k_train_lr_path=settings['div2k_train_lr_path']
+        self.div2k_train_hr_path=settings['div2k_train_hr_path']
+        self.flickr2k_train_lr_path=settings['flickr2k_train_lr_path']
+        self.flickr2k_train_hr_path=settings['flickr2k_train_hr_path']
+
+        self.div2k_test_lr_path=settings['div2k_test_lr_path']
+        self.div2k_test_hr_path=settings['div2k_test_hr_path']
         
         self._setup_exec_env(virtual_device, ngpus_per_node, settings)
         self._setup_train_env()
