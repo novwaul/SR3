@@ -86,10 +86,10 @@ class Flickr2KDataset(TrainDataset):
         )
 
 class DF2KTrainDataset(Dataset):
-    def __init__(self):
+    def __init__(self, div2k_lr_path, div2k_hr_path, flickr2k_lr_path, flickr2k_hr_path, crop_size):
         super().__init__()
-        self.div2k = DIV2kDataset()
-        self.flickr2k = Flickr2KDataset()
+        self.div2k = DIV2kDataset(div2k_lr_path, div2k_hr_path, crop_size)
+        self.flickr2k = Flickr2KDataset(flickr2k_lr_path, flickr2k_hr_path, crop_size)
         self.div2k_len = len(self.div2k)
         self.flickr2k_len = len(self.flickr2k)
         self.total_imgs = self.div2k_len+self.flickr2k_len
