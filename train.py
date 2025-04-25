@@ -22,14 +22,6 @@ from diffusion import GaussianDiffusion
 import torch.distributed as dist
 
 class DiffTrainer(Utils):
-    def __init__(self):
-        # train & test parameters
-        self.train_batch_size=4
-        self.eval_batch_size=4
-        self.workers=4
-        self.report_img_idxs = [0, 10, 20, 30]
-        self.report_img_per = 10
-    
     # register objects needed for both training and testing
     def _setup_exec_env(self, virtual_device, ngpus_per_node, settings):
 
@@ -61,6 +53,12 @@ class DiffTrainer(Utils):
 
     # external call function to do trainging
     def setup_and_train(self, virtual_device, ngpus_per_node, settings, resume):
+        self.train_batch_size=settings['train_batch_size']
+        self.eval_batch_size=settings['eval_batch_size']
+        self.workers=settings['workers']
+        self.report_img_idxs=settings['report_img_idx']
+        self.report_img_per=settings['report_img_per']
+        
         self._setup_exec_env(virtual_device, ngpus_per_node, settings)
         self._setup_train_env()
 
@@ -236,6 +234,12 @@ class DiffTrainer(Utils):
     
     # external call to perform testing
     def setup_and_test(self, virtual_device, ngpus_per_node, settings, resume):
+        self.train_batch_size=settings['train_batch_size']
+        self.eval_batch_size=settings['eval_batch_size']
+        self.workers=settings['workers']
+        self.report_img_idxs=settings['report_img_idx']
+        self.report_img_per=settings['report_img_per']
+        
         if not hasattr(self, 'ema_net'):
             self._setup_exec_env(virtual_device, ngpus_per_node, settings)
         self._setup_test_env(virtual_device, ngpus_per_node)
