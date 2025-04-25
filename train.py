@@ -244,11 +244,14 @@ class DiffTrainer(Utils):
     
     # external call to perform testing
     def setup_and_test(self, virtual_device, ngpus_per_node, settings, resume):
-        self.train_batch_size=settings['train_batch_size']
         self.eval_batch_size=settings['eval_batch_size']
         self.workers=settings['workers']
         self.report_img_idxs=settings['report_img_idx']
-        self.report_img_per=settings['report_img_per']
+
+        self.flickr2k_test_lr_path=settings['flickr2k_test_lr_path']
+        self.flickr2k_test_hr_path=settings['flickr2k_test_hr_path']
+
+        self.crop_size=settings['crop_size']
         
         if not hasattr(self, 'ema_net'):
             self._setup_exec_env(virtual_device, ngpus_per_node, settings)
@@ -261,7 +264,7 @@ class DiffTrainer(Utils):
     # register objects needed to perform tesing
     def _setup_test_env(self, virtual_device, ngpus_per_node):
         # define dataloader
-        self.test_dataset = Flickr2KTestDataset()
+        self.test_dataset = Flickr2KTestDataset(self.flickr2k_test_lr_path, self.flickr2k_test_hr_path, self.crop_size)
         test_sampler = DistributedSampler(self.test_dataset, shuffle=False, drop_last=False) if self.mgpu and self.is_divisible(self.test_dataset, ngpus_per_node) else None
         self.test_dataloader = DataLoader(self.test_dataset, batch_size=self.eval_batch_size, num_workers=self.workers, sampler=test_sampler, pin_memory=True)
         
