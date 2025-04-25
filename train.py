@@ -153,7 +153,7 @@ class DiffTrainer(Utils):
             v_loss, img, lbl, sample = self._valid(epoch)
             # summary
             if self.master:
-                self.store_train_env(epoch)
+                self._store_train_env(epoch)
                 self.writer.add_scalar('Train Loss', t_loss, epoch)
                 self.writer.add_scalar('Valid Loss', v_loss, epoch)
                 if sample != None:
