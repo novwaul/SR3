@@ -252,7 +252,7 @@ class DiffTrainer(Utils):
     def _setup_test_env(self, virtual_device, ngpus_per_node):
         # define dataloader
         self.test_dataset = Flickr2KTestDataset()
-        test_sampler = DistributedSampler(self.test_dataset, shuffle=False, drop_last=False) if self.mgpu and self.is_divisible(test_dataset, ngpus_per_node) else None
+        test_sampler = DistributedSampler(self.test_dataset, shuffle=False, drop_last=False) if self.mgpu and self.is_divisible(self.test_dataset, ngpus_per_node) else None
         self.test_dataloader = DataLoader(self.test_dataset, batch_size=self.eval_batch_size, num_workers=self.workers, sampler=test_sampler, pin_memory=True)
         
         # define scores
