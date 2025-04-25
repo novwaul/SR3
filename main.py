@@ -22,12 +22,26 @@ if __name__ == '__main__':
     trainer = DiffTrainer()
     settings = dict()
     
-    ### Hyper Parameters
-    settings['steps']=2000
-    settings['sample_steps']=100
-    settings['iters']=500000
-    settings['lr']=1e-5
-
+    """
+    [ Hyper-parameters & image paths ]
+    Please change the parameters according to your needs.
+    """
+    ###########################################################################
+    settings['steps']=2000 # diffusion training steps
+    settings['sample_steps']=100 # diffusion sample steps
+    settings['iters']=500000 # training iterations
+    settings['lr']=1e-5 # training learning rate
+    settings['train_batch_size']=4 # training batch size
+    settings['eval_batch_size']=4 # test batch size
+    settings['workers']=4 # number of dataloader workers
+    settings['report_img_idx'] = [0, 10, 20, 30] # validation image index
+    settings['report_img_per'] = 10 # validation image report period
+    ###########################################################################
+    """
+     [ Hyper-parameters & image paths ]
+     End
+    """
+    
     ### Basic settings
     settings['point_path']='/pnt'
     settings['log_path']='/log'
