@@ -5,6 +5,27 @@
 [2025.02.18 edit]
 The below results were measured without self-attention due to a typo in the self-attention block. The typo is now fixed.
 
+## How to run the code
+
+First, set hyper-paramters and image paths at line 30~47 in <code> main.py </code>.
+
+For example,
+
+```
+settings['steps']=2000
+settings['sample_steps']=100
+settings['iters']=500000
+settings['lr']=1e-5
+...
+```
+
+After setting those parameters and paths,
+
+**Train:** <code> python main.py -m UNet -a [channel num] </code>
+
+**Test:** <code> python main.py -m UNet -a [channel num] -t </code>
+
+
 ## Result
 
 ### 64x64 to 256x256 Model
